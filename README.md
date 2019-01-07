@@ -2,10 +2,10 @@
 This is a student project as a part of Treehouse Techdegree Fullstack JavaScript program.
 
 ## Getting started
-Run __npm install__ command to install all of the dependencies.
-Add you Flickr API key
-* in src folder you find config_template.js
-* rename this file config.js and add you API key
+* Run __npm install__ command to install all of the dependencies.
+* Add you Flickr API key
+	* in src folder you find config_template.js
+	* rename this file to 'config.js' and add you API key
 
 
 ## Project instructions
