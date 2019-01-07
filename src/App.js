@@ -8,6 +8,7 @@ import apiKey from './config';
 import Header from './components/Header';
 import Gallery from './components/Gallery';
 import NotFound from './components/NotFound';
+import Loading from './components/Loading';
 
 
 class App extends Component {
@@ -44,7 +45,7 @@ class App extends Component {
 					<Header onSearch={this.gallerySearch} />
 					{
 						(this.state.loading)
-						? <p>Loading..</p>
+						? <Loading />
 						: <Gallery data={this.state.data}/>
 					}
 				</div>
