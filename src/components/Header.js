@@ -5,6 +5,7 @@ import Form from './Form';
 const Header = (props) => {
 	return (
 		<header>
+			<h1>Gallery App</h1>
 			<Form
 			onSearch={props.onSearch}
 			/>

@@ -2,17 +2,23 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+const myLinks = ['pinguin', 'polar', 'glacier'];
+
 const Nav = (props) => {
-	return (
+	let links = myLinks.map((link) => {
+		return (
+			 <li className='links'><NavLink to={link} onClick={() => {props.onSearch(link)}} >{link}</NavLink></li>
+		)
+	})
+
+	return(
 		<div>
 			<nav className="main-nav">
 			  <ul>
-				  <li><NavLink to='/?search=nature' onClick={() => {props.onSearch('nature')}} >Nature</NavLink></li>
-				  <li><NavLink to='/?search=wildLife' onClick={() => {props.onSearch('wildLife')}} >Wildlife</NavLink></li>
-				  <li><NavLink to='/?search=arctic' onClick={() => {props.onSearch('arctic')}} >Arctic</NavLink></li>
+			  {links}
 			  </ul>
-			</nav>
-		</div>
+		  </nav>
+	  </div>
 	)
 }
 
