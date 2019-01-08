@@ -117,9 +117,48 @@ input {
     display: flex;
     justify-content: center;
   }
-  
+
   .main-nav li {
     margin: 10px;
     width: 100px;
   }
+}
+
+/*** MY CSS CHANGES ***/
+
+body {
+	color: #233D4D;
+}
+
+input {
+ 	background-color: #fff;
+	border: 2px solid #d7dbdf;
+}
+
+h1 {
+	font-size: 4em;
+	color: #233D4D;
+}
+
+h2 {
+	padding-top: 15px;
+	color: #233D4D;
+	border-bottom: 2px solid #d7dbdf;
+	padding-bottom: 15px;
+}
+
+.not-found {
+	color: #7e7e7e;
+}
+
+.main-nav a {
+  background: #619B8A;
+}
+
+.search-form button {
+  background-color: #FCCA46;
+}
+
+.links:first-letter {
+    text-transform: capitalize;
 }
