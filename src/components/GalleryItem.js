@@ -5,7 +5,8 @@ const GalleryItem = props => (
 	<li>
 	  <img
 	  src={props.url}
-	  alt=""/>
+	  alt={props.title}
+	  />
 	</li>
 );
 

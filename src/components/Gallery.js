@@ -8,7 +8,7 @@ const Gallery = props => {
 	const results = props.data;
 	let images;
 	if (results.length > 0) {
-		images = results.map(image => <GalleryItem url={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`} key={image.id} /> );
+		images = results.map(image => <GalleryItem url={`https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`} key={image.id} title={image.title} /> );
 	}  else {
 		images = <NotFound />
 	}
