@@ -159,6 +159,6 @@ h2 {
   background-color: #FCCA46;
 }
 
-.links:first-letter {
+.link:first-letter {
     text-transform: capitalize;
 }
