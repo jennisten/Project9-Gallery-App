@@ -1,24 +1,12 @@
-//add Navigation component - this is the navigation menu
+//Navigation component for each navigation link
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const myLinks = ['pinguin', 'polar', 'glacier', 'iceland', 'volcano'];
-
 const Nav = (props) => {
-	let links = myLinks.map((link, index) => {
-		return (
-			 <li className='links' key={index}><NavLink to={link} onClick={() => {props.onSearch(link)}} >{link}</NavLink></li>
-		)
-	})
-
 	return(
-		<div>
-			<nav className="main-nav">
-			  <ul>
-			  {links}
-			  </ul>
-		  </nav>
-	  </div>
+		<span>
+  			<li className="link"><NavLink to={`/search/${props.link}`} onClick={ () => {props.onSearch(props.link)}}>{props.link}</NavLink></li>
+		</span>
 	)
 }
 

@@ -1,5 +1,5 @@
+//Loading component to be used when loading state is true
 import React from 'react';
-//import Loader to be used in App when loading content
 import { Loader } from 'semantic-ui-react';
 
 const Loading = () => <Loader active inline='centered' />

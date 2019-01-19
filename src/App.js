@@ -1,23 +1,28 @@
+//main container component that handles state and functionality
 import React, { Component } from 'react';
 import {
 	BrowserRouter,
-	Route
+	Route,
+	Switch
 } from 'react-router-dom';
 import axios from 'axios';
 import apiKey from './config';
+import links from './links';
+
 import Header from './components/Header';
-import Gallery from './components/Gallery';
-import NotFound from './components/NotFound';
-import Loading from './components/Loading';
+import PageNotFound from './components/PageNotFound';
 
 
+//component that handles the api calls, routes and renders page accordingly
 class App extends Component {
 
 	constructor() {
 		super();
 		this.state = {
 			data: [],
-			loading: true
+			loading: true,
+			links: links,
+			query: ''
 		}
 	}
 
@@ -25,16 +30,18 @@ class App extends Component {
 		this.gallerySearch();
 	}
 
-	gallerySearch = (query = 'pinguin') => {
+	//function to handle all api calls, as a response from Form and Nav components
+	gallerySearch = (query = "welcome") => {
 		axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
 		.then(response => {
 			this.setState({
 				data: response.data.photos.photo,
-				loading: false
+				loading: false,
+				query: query,
 			})
 		})
 		.catch(error => {
-			console.log('Error fetching data', error);
+			console.log('Error fetching and parsing data', error);
 		});
 	}
 
@@ -42,12 +49,11 @@ class App extends Component {
 		return (
 			<BrowserRouter>
 				<div className="container">
-					<Header onSearch={this.gallerySearch} />
-					{
-						(this.state.loading)
-						? <Loading />
-						: <Gallery data={this.state.data}/>
-					}
+					<Switch>
+						<Route exact path="/" render={ () => <Header onSearch={this.gallerySearch} links={this.state.links} data={this.state.data} query={this.state.query} loading={this.state.loading} /> } />
+						<Route path="/search/:query" render={ () => <Header onSearch={this.gallerySearch} links={this.state.links} data={this.state.data} query={this.state.query} loading={this.state.loading} /> } />
+						<Route component={PageNotFound} />
+					</Switch>
 				</div>
 			</BrowserRouter>
 		);

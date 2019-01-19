@@ -1,4 +1,4 @@
-//create a single Gallery-item component that can be reused with iteration to display each list item and image.
+//Gallery-item component that can be reused to display each list item and image
 import React from 'react';
 
 const GalleryItem = props => (

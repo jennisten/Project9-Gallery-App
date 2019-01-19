@@ -1,18 +1,28 @@
+//Form component for search functionality
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Form extends Component {
 
+	//handle search on submit, pass query to parent component for the api call and update url path
 	handleSubmit = e => {
+
 		e.preventDefault();
-		this.props.onSearch(this.query.value);
+		let query = this.query.value.toLowerCase();
+		let path = `/search/${query}`;
+		this.props.history.push(path);
+		this.props.onSearch(query);
 		e.currentTarget.reset();
 	}
 
+
 	render() {
+
 		return(
-				<form className="search-form" onSubmit={this.handleSubmit}>
+			<form className="search-form" onSubmit={this.handleSubmit}>
 				  <input
 				  type="search"
+				  onChange={this.onSearchChange}
 				  name="search"
 				  ref={(input => this.query = input )}
 				  placeholder="Search" required />
@@ -27,4 +37,4 @@ class Form extends Component {
 	}
 }
 
-export default Form;
+export default withRouter(Form);
