@@ -3,12 +3,13 @@ This is a student project as a part of Treehouse Techdegree Fullstack JavaScript
 
 ## Getting started
 * Run __npm install__ command to install all of the dependencies.
+* You will need your own Flickr API key for this project, you can apply for a non-commercial api key -> https://www.flickr.com/services/apps/create/apply/
 * Add you Flickr API key
-	* in src folder you find config_template.js
+	* in src folder you will find config_template.js
 	* rename this file to 'config.js' and add you API key
 
 
-## Project instructions
+## Student Project instructions
 In this project, you'll build an image gallery using React and the Flickr API. After creating the project with create-react-app, you will build the gallery components, add to the supplied CSS and set up routing. For this project, you'll use the very popular and in-demand React library to create an image gallery app. With the help of this powerful "MVC" (Model, View, Controller) library, the app will be built in the style of modern single page applications to keep it fast, modular, and in sync with current web development trends.
 
 Using the powerful Create React App tool, you'll set up the initial project.
